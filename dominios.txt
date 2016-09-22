@@ -1,4 +1,4 @@
-﻿Www.Google.com.br
+www.Google.com.br
 www.Facebook.com
 www.Google.com
 www.Youtube.com
@@ -43,19 +43,19 @@ www.Esporte.uol.com.br
 www.Megafilmeshd.net
 www.Fazenda.gov.br
 www.Blogger.com
- www.Bradesco.com.br
- www.R7.com
- www.Tumblr.com
- www.Egrana.com.br
- www.Sp.gov.br
- www.Baixaki.com.br
- www.Reclameaqui.com.br
- www.Pinterest.com
- www.domain.com
- www.Bing.com
- www.Bb.com.br
- www.Blogspot.com
- www.Cityadspix.com
+www.Bradesco.com.br 
+www.R7.com
+www.Tumblr.com
+www.Egrana.com.br
+www.Sp.gov.br
+www.Baixaki.com.br
+www.Reclameaqui.com.br
+www.Pinterest.com
+www.domain.com
+www.Bing.com
+www.Bb.com.br
+www.Blogspot.com
+www.Cityadspix.com
 www.Submarino.com.br
 www.Noticias.uol.com.br
 www.Paypal.com
