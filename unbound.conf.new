@@ -1,0 +1,62 @@
+server:
+port: 53
+
+
+interface: 0.0.0.0
+
+# Permissao de Consultas
+access-control: 127.0.0.0/8 allow
+access-control: 192.168.0.0/16 allow
+access-control: 172.16.0.0/12 allow
+access-control: 10.0.0.0/8 allow
+
+# ASN
+access-control: 143.0.220.0/28 allow
+access-control: 143.0.222.0/24 allow
+access-control: 143.0.223.0/25 allow
+access-control: 143.0.223.128/25 allow
+
+# Negar Saida
+access-control: 0.0.0.0/0 deny
+
+verbosity: 1
+num-threads: 4
+outgoing-range: 8192
+num-queries-per-thread: 4096
+so-rcvbuf: 4m
+so-sndbuf: 4m
+
+
+msg-cache-slabs: 8
+rrset-cache-slabs: 8
+infra-cache-slabs: 8
+key-cache-slabs: 8
+rrset-cache-size: 512m
+msg-cache-size: 1024m
+
+
+do-ip4: yes
+do-ip6: yes
+do-udp: yes
+do-tcp: yes
+
+
+do-daemonize: yes
+module-config: "iterator"
+local-data: "localhost A 127.0.0.1" 
+local-data-ptr: "127.0.0.1 localhost"
+
+#Root Servers
+root-hints: "/etc/unbound/named.cache"
+use-syslog: yes
+
+#Logs
+logfile: "/etc/unbound/unbound.log" 
+pidfile: "/var/run/unbound.pid"
+
+#Esconde Versao
+hide-identity: yes
+hide-version: yes
+
+# DNSSEC
+auto-trust-anchor-file: "/var/lib/unbound/root.key"
