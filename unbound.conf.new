@@ -10,19 +10,18 @@ access-control: 192.168.0.0/16 allow
 access-control: 172.16.0.0/12 allow
 access-control: 10.0.0.0/8 allow
 
-# ASN
-access-control: 143.0.220.0/28 allow
-access-control: 143.0.222.0/24 allow
-access-control: 143.0.223.0/25 allow
-access-control: 143.0.223.128/25 allow
-
 # Negar Saida
 access-control: 0.0.0.0/0 deny
 
+# Logs
 verbosity: 1
+
+# Threads processador
 num-threads: 4
+
 outgoing-range: 8192
 num-queries-per-thread: 4096
+
 so-rcvbuf: 4m
 so-sndbuf: 4m
 
@@ -46,20 +45,41 @@ module-config: "iterator"
 local-data: "localhost A 127.0.0.1" 
 local-data-ptr: "127.0.0.1 localhost"
 
-#Root Servers
+# Root Servers ( ftp://FTP.INTERNIC.NET/domain/named.cache )
 root-hints: "/etc/unbound/named.cache"
 use-syslog: yes
 
-#Logs
+# Logs
 logfile: "/etc/unbound/unbound.log" 
 pidfile: "/var/run/unbound.pid"
 
-#Esconde Versao
+# Esconde Versao
 hide-identity: yes
 hide-version: yes
 
+# Segurança
+harden-glue: yes
+harden-dnssec-stripped: yes
+ 
+# http://tools.ietf.org/html/draft-vixie-dnsext-dns0x20-00
+use-caps-for-id: yes
+ 
+# TTL em cache, default 0
+cache-min-ttl: 3600
+cache-max-ttl: 86400
+ 
+# Verificação de tempo em cache
+prefetch: yes
+
+# Log de inundação e ações de limpeza
+unwanted-reply-threshold: 10000
+ 
+# Limitação de requests de localhost
+# do-not-query-localhost: no
+
 # DNSSEC
 auto-trust-anchor-file: "/var/lib/unbound/root.key"
+
 # Bloqueio de domínios
 #     local-zone: "doubleclick.net" redirect
 #     local-data: "doubleclick.net A 127.0.0.1"
