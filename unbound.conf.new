@@ -41,7 +41,7 @@ do-tcp: yes
 
 
 do-daemonize: yes
-module-config: "iterator"
+module-config: "validator iterator"
 local-data: "localhost A 127.0.0.1" 
 local-data-ptr: "127.0.0.1 localhost"
 
